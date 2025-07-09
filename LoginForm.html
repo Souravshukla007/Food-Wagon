@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FoodWagon</title>
+    <link rel="stylesheet" href="webproject.css">
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+        .login-form {
+            background: white;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+        .login-form h1 {
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        .login-form .input-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .login-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        .login-form .cta-button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .login-form .switch-form {
+            margin-top: 2rem;
+        }
+        .login-form .switch-form a {
+            color: var(--primary-color, #EB1700);
+            font-weight: bold;
+        }
+        .home-link {
+            display: block;
+            margin-top: 2rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <h1>Log In to FoodWagon</h1>
+            <form>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="cta-button">Log In</button>
+            </form>
+            <p class="switch-form">Don't have an account? <a href="#">Sign Up</a></p>
+            <a href="index.html" class="home-link">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

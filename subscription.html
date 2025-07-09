@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WagonPass Subscription - FoodWagon</title>
+    <link rel="stylesheet" href="webproject.css">
+    <style>
+        .subscription-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            padding: 2rem;
+        }
+        .subscription-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .subscription-card h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .subscription-card .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color, #EB1700);
+            margin-bottom: 0.5rem;
+        }
+        .subscription-card .price span {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #777;
+        }
+        .subscription-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        .features-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+            display: inline-block;
+        }
+        .features-list li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .features-list i {
+            color: var(--primary-color, #EB1700);
+            margin-right: 10px;
+        }
+        .home-link {
+            display: block;
+            margin-top: 2rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="subscription-container">
+        <div class="subscription-card">
+            <h1>Get WagonPass</h1>
+            <p>Unlock exclusive benefits and save on every order.</p>
+            <div class="price">₹0<span>/first 30 days</span></div>
+            <p>Then ₹99/month. Cancel anytime.</p>
+            
+            <ul class="features-list">
+                <li><i class="fa-solid fa-check"></i>₹0 delivery fee on all orders</li>
+                <li><i class="fa-solid fa-check"></i>5% back on all pickup orders</li>
+                <li><i class="fa-solid fa-check"></i>Exclusive member-only offers</li>
+                <li><i class="fa-solid fa-check"></i>Priority customer support</li>
+            </ul>
+
+            <button class="cta-button">Start Your Free 30-Day Trial</button>
+            <a href="index.html" class="home-link">← Back to Home</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGloSKpLpUqfKxNPL_CoaELkZUGKHEOknNf2Q/rN+pWysoPHTJqO40Rj4dBCrWovkG1Wn1d/u2g9bXNqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
