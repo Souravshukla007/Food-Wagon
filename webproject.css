@@ -4,6 +4,7 @@
     --primary-color: #EB1700;
     --light-gray: #f9f9f9;
     --dark-bg: #1c1c1c;
+    --pro-plan-bg: #fffbe6; /* A soft yellow for the recommended plan */
 }
 
 * {
@@ -320,7 +321,7 @@ a {
     color: #aaa;
 }
 
-/* Chatbot */
+/* Chatbot --- UPDATED STYLES --- */
 .chatbot-icon {
     position: fixed;
     bottom: 25px;
@@ -348,7 +349,8 @@ a {
     position: fixed;
     bottom: 100px;
     right: 25px;
-    width: 350px;
+    width: 600px; /* Increased width */
+    max-width: 90vw; /* Responsive constraint */
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
@@ -378,43 +380,194 @@ a {
 
 .chat-body {
     padding: 1.5rem;
-    height: 150px;
+    height: 400px; /* Increased height */
     overflow-y: auto;
 }
 
 .chat-footer {
     display: flex;
+    align-items: center;
     border-top: 1px solid #eee;
+    padding: 0.5rem 1rem;
 }
-.chat-footer input {
+.chat-footer input[type="text"] {
     flex-grow: 1;
     border: none;
     padding: 1rem;
     outline: none;
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    margin: 0 1rem;
 }
-.chat-footer button {
-    background-color: #f1f1f1;
+#chat-send-btn {
+    background-color: var(--primary-color);
+    color: white;
     border: none;
-    padding: 0 1.5rem;
     cursor: pointer;
-    font-weight: bold;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+#chat-send-btn:hover {
+    background-color: #c01400;
+}
+.upload-btn {
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #555;
+    flex-shrink: 0;
+    transition: color 0.2s;
+}
+.upload-btn:hover {
     color: var(--primary-color);
 }
+
 
 .user-msg {
     text-align: right;
     margin: 10px 0;
+    color: #333;
 }
 
 .bot-msg {
     text-align: left;
     margin: 10px 0;
+    color: #1c1c1c;
 }
+
+.typing {
+    color: #999;
+    font-style: italic;
+}
+
+/* --- NEW STYLES FOR SUBSCRIPTION PLANS --- */
+.plans-section {
+    padding: 4rem 5%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.plans-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.plans-header p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plans-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plan-card {
+    background: var(--light-gray);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.plan-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.plan-card .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.plan-card .price span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #777;
+}
+
+.plan-card > p {
+    color: #666;
+    margin-bottom: 2rem;
+    min-height: 40px;
+}
+
+.plan-card .features-list {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.plan-card .features-list li {
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.plan-card .features-list i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 20px;
+}
+.plan-card .features-list .fa-times {
+    color: #aaa;
+}
+
+.plan-card .cta-button.secondary {
+    background: #e0e0e0;
+    color: #333;
+}
+.plan-card .cta-button.secondary:hover {
+    background: #ccc;
+}
+
+
+.plan-card.recommended {
+    background: var(--pro-plan-bg);
+    border: 2px solid var(--primary-color);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 0 15px 0 15px;
+}
+
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .nav-search {
-        display: none;
+    .nav-search { display: none; }
+    .plans-container {
+        grid-template-columns: 1fr; /* Stack on tablet */
     }
 }
 @media (max-width: 768px) {
@@ -458,8 +611,29 @@ a {
         font-size: 2rem;
     }
     .chat-popup {
-        width: 90vw;
-        bottom: 90px;
+        /* Already responsive with 90vw, but we can adjust height for mobile */
+        bottom: 80px;
         right: 5vw;
+        height: 70vh;
+    }
+    .chat-body {
+        height: 100%; /* Take up available space */
+    }
+    
+    /* --- Mobile Swipe Styles for Plans --- */
+    .plans-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1rem; /* Space for scrollbar */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+     /* Hide scrollbar for a cleaner look on mobile */
+    .plans-container::-webkit-scrollbar {
+        display: none;
+    }
+    .plan-card {
+        flex: 0 0 85%; /* Each card takes up 85% of the container width */
+        scroll-snap-align: center; /* Snap cards to the center */
     }
 }
